@@ -1,0 +1,161 @@
+:root {
+    --primary: #f39c12;
+    --secondary: #001F46;
+    --tertiary: #ffffff;
+    --border: #ccc;
+}
+
+/* Base */
+
+body {
+    margin: 0;
+    font-family: Arial;
+    background: var(--tertiary);
+}
+
+/* Headings */
+
+h2 {
+    color: var(--secondary);
+    margin-bottom: 15px;
+}
+
+h2 span {
+    color: var(--primary);
+}
+
+/* Inputs */
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin: 6px 0;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
+
+/* Buttons */
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    background: var(--primary);
+    color: var(--tertiary);
+    border: none;
+    border-radius: 4px;
+}
+
+/* Links */
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+/* Navbar */
+
+.navbar-custom {
+    background: var(--tertiary);
+    border-bottom: 2px solid var(--primary);
+    padding: 10px 20px;
+}
+
+.navbar-custom a {
+    margin-left: 15px;
+    color: var(--secondary);
+}
+
+/* Layout Fix (Top + Bottom Proper) */
+
+html, body {
+    height: 100%;
+}
+
+.main-container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+}
+
+/* Sidebar */
+
+.sidebar {
+    border: 1px solid var(--border);
+    padding: 10px;
+    min-height: 400px;
+    background: var(--tertiary);
+}
+
+/* Center Feed */
+
+.center-feed {
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Posts */
+
+.post {
+    border: 1px solid var(--border);
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background: var(--tertiary);
+}
+
+/* Profile */
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Footer */
+
+.footer {
+    background: var(--primary);
+    color: var(--tertiary);
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Login Box */
+
+.log_box {
+    border: 2px solid var(--primary);
+    padding: 25px;
+    width: 320px;
+    border-radius: 8px;
+    text-align: center;
+    background: var(--tertiary);
+    margin: auto;
+    margin-top: 120px;
+}
+
+/* Registration Box */
+
+.reg_box {
+    border: 2px solid var(--primary);
+    padding: 25px;
+    width: 500px;
+    border-radius: 8px;
+    text-align: center;
+    background: var(--tertiary);
+    margin: auto;
+    margin-top: 70px;
+}
