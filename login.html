@@ -36,8 +36,11 @@ function login() {
 
     if(u === "priti115" && p === "12345") {
         alert("Login Successful");
+        window.location.href = "user_portfolio.html";
+        return false;
     } else {
         alert("Invalid Details");
+        return false;
     }
 }
 </script>

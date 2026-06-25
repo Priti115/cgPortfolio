@@ -5,12 +5,33 @@
     --border: #ccc;
 }
 
-/* Base */
 
 body {
     margin: 0;
     font-family: Arial;
     background: var(--tertiary);
+}
+
+html, body {
+    height: 100%;
+}
+
+
+.main-container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 24px auto;
+    padding: 20px 0;
 }
 
 /* Headings */
@@ -29,21 +50,49 @@ h2 span {
 input, select {
     width: 100%;
     padding: 8px;
-    margin: 6px 0;
+    margin: 6px 0 10px 0;
     border: 1px solid var(--border);
-    border-radius: 4px;
+    border-radius: 10px;
 }
 
 /* Buttons */
 
-button {
+button{
     width: 100%;
-    padding: 10px;
+    padding: 6px;
     margin-top: 8px;
     background: var(--primary);
     color: var(--tertiary);
-    border: none;
-    border-radius: 4px;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+button:hover{
+    background: transparent;
+    border-color: var(--secondary);
+    color: var(--secondary);
+}
+
+.btn {
+    background: var(--primary) !important;
+    color: var(--tertiary) !important;
+    border-radius: 10px !important;
+    border: 3px solid transparent !important;
+}
+
+.btn:hover {
+    background: transparent !important;
+    border-color: var(--secondary) !important;
+    color: var(--secondary) !important;
+}
+
+.contact-btn {
+    background: var(--primary) !important;
+    color: var(--tertiary) !important;
+    border-radius: 10px !important;
+    border: 3px solid transparent !important;
+    padding: 6px !important;
 }
 
 /* Links */
@@ -56,6 +105,9 @@ a {
 /* Navbar */
 
 .navbar-custom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: var(--tertiary);
     border-bottom: 2px solid var(--primary);
     padding: 10px 20px;
@@ -66,32 +118,14 @@ a {
     color: var(--secondary);
 }
 
-/* Layout Fix (Top + Bottom Proper) */
 
-html, body {
-    height: 100%;
-}
-
-.main-container {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.content {
-    flex: 1;
-}
-
-/* Sidebar */
 
 .sidebar {
     border: 1px solid var(--border);
     padding: 10px;
     min-height: 400px;
-    background: var(--tertiary);
 }
 
-/* Center Feed */
 
 .center-feed {
     background: #f9f9f9;
@@ -99,14 +133,12 @@ html, body {
     border-radius: 5px;
 }
 
-/* Posts */
 
 .post {
     border: 1px solid var(--border);
     padding: 12px;
     margin-bottom: 15px;
     border-radius: 5px;
-    background: var(--tertiary);
 }
 
 /* Profile */
@@ -124,15 +156,6 @@ html, body {
     margin-right: 10px;
 }
 
-/* Footer */
-
-.footer {
-    background: var(--primary);
-    color: var(--tertiary);
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px;
-}
 
 /* Login Box */
 
@@ -142,7 +165,6 @@ html, body {
     width: 320px;
     border-radius: 8px;
     text-align: center;
-    background: var(--tertiary);
     margin: auto;
     margin-top: 120px;
 }
@@ -155,7 +177,126 @@ html, body {
     width: 500px;
     border-radius: 8px;
     text-align: center;
-    background: var(--tertiary);
     margin: auto;
     margin-top: 70px;
+}
+
+/* About Page */
+
+.founder {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.founder img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+}
+
+.founder p {
+    max-width: 500px;
+    margin: auto;
+    font-size: 14px;
+}
+
+.testimonial-card img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.testimonial-card .card-body {
+    text-align: center;
+}
+
+/* User Portfolio */
+
+.profile-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.user-info {
+    text-align: right;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.tab-buttons button {
+    flex: 1;
+}
+
+.tab-content {
+    border: 1px solid var(--border);
+    padding: 15px;
+    margin-top: 10px;
+}
+
+/* Contact Page */
+
+.banner {
+    margin: 20px 40px !important;
+    justify-content: center;
+}
+
+.banner img {
+    width: 400%!important;
+    height: 300px !important;
+    object-fit: cover;
+}
+
+
+.contact-box {
+    text-align: center;
+    padding: 30px;
+    border: 1px solid var(--border);
+    margin: 30px;
+    border-radius: 8px;
+}
+
+.icons {
+    margin-top: 20px;
+}
+
+.icons a {
+    margin: 0 12px;
+    font-size: 28px;
+    color: var(--primary);
+    border: 2px solid transparent;
+    padding: 10px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.icons a:hover {
+    border: 3px solid var(--secondary);
+    color: var(--secondary);
+}
+
+.contact-info {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* Footer */
+
+.footer {
+    background: var(--primary);
+    color: var(--tertiary);
+    text-align: center;
+    padding: 10px;
 }

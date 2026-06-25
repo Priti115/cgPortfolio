@@ -4,50 +4,72 @@
     <title>Register</title>
 
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
-        .box {
-            width: 340px;
-        }
-    </style>
 </head>
 <body>
 
-<form class="reg_box" onsubmit="return check()">
+<div class="main-container">
 
-    <div style="text-align:center; font-size:28px; font-family:Arial; font-weight:bold; margin-bottom:15px;">
+<!-- Navbar -->
+<div class="navbar-custom d-flex justify-content-between align-items-center">
+
+    <div style="font-size:24px; font-weight:bold;">
         <span style="color:#f39c12;">CG</span>
         <span style="color:#001F46;">Infinity</span>
     </div>
 
-    <input type="text" id="uname" placeholder="Username (no space)" required>
+    <div>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="login.html" class="btn">Login</a>
+    </div>
 
-    <input type="tel" placeholder="Phone Number" required>
+</div>
 
-    <input type="email" placeholder="Email" required>
+<form class="reg_box" onsubmit="return check()">
 
-    <input type="text" placeholder="Designation" required>
+    <div style="text-align:center; font-size:28px; font-family:Arial; font-weight:bold; margin-bottom:20px;">
+        <span style="color:#f39c12;">CG</span>
+        <span style="color:#001F46;">Infinity</span>
+    </div>
 
-    <input type="date" required>
+    <input style = "margin-bottom:20px;" type="text" id="uname" placeholder="Username (no space)" required>
 
-    <select required>
+    <input style = "margin-bottom:20px;" type="tel" placeholder="Phone Number" required>
+
+    <input style = "margin-bottom:20px;" type="email" placeholder="Email" required>
+
+    <input style = "margin-bottom:20px;" type="text" placeholder="Designation" required>
+
+    <input style = "margin-bottom:20px;" style = "margin-bottom:20px;" type="date" required>
+
+    <select required style = "margin-bottom:20px;">
         <option value="">Gender</option>
         <option>Male</option>
         <option>Female</option>
     </select>
 
-    <input type="number" placeholder="Experience" required>
+    <input style = "margin-bottom:20px;" type="number" placeholder="Experience" required>
 
-    <input type="password" id="p1" placeholder="Password" required>
+    <input style = "margin-bottom:20px;" type="password" id="p1" placeholder="Password" required>
 
-    <input type="password" id="p2" placeholder="Confirm Password" required>
+    <input style = "margin-bottom:20px;" type="password" id="p2" placeholder="Confirm Password" required>
 
-    <button type="submit">Register</button>
-    <button type="reset">Reset</button>
+    <button  style = "margin-bottom:20px;" type="submit">Register</button>
+    <button  style = "margin-bottom:20px;" type="reset">Reset</button>
 
     <p>Already user? <a href="login.html">Login</a></p>
 
 </form>
+
+
+<!-- Footer -->
+<div class="footer">
+    CG Infinity © 2026
+</div>
+
+</div>
 
 <script>
 function check() {
@@ -73,4 +95,3 @@ function check() {
 
 </body>
 </html>
-``
