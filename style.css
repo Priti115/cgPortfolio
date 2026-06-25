@@ -99,7 +99,13 @@ button:hover{
 
 a {
     color: var(--primary);
-    text-decoration: none;
+    text-decoration: none !important;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: var(--secondary);
+    border-bottom: 2px solid var(--primary) ;
 }
 
 /* Navbar */
@@ -140,6 +146,36 @@ a {
     margin-bottom: 15px;
     border-radius: 5px;
 }
+
+
+/* Search */
+.search-box {
+    width: 200px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Post */
+.post {
+    background: white;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
+.post:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Create post */
+.create-post {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
 
 /* Profile */
 

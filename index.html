@@ -5,24 +5,16 @@
 
 <link rel="stylesheet" href="style.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<style>
-.carousel img {
-    height: 120px;
-    object-fit: cover;
-}
-</style>
-
 </head>
+
 <body>
 
 <div class="main-container">
 
 <!-- Navbar -->
 <div class="navbar-custom d-flex justify-content-between align-items-center">
-
     <div style="font-size:24px; font-weight:bold;">
         <span style="color:#f39c12;">CG</span>
         <span style="color:#001F46;">Infinity</span>
@@ -33,10 +25,17 @@
         <a href="contact.html">Contact Us</a>
         <a href="login.html" class="btn btn-warning">Login</a>
     </div>
-
 </div>
 
+<!-- Content -->
+<div class="content container mt-3">
 
+<!-- ✅ SEARCH BAR (for posts) -->
+<input type="text" id="searchPost" placeholder="Search posts..." onkeyup="searchPosts()" class="form-control mb-3">
+
+<div class="row">
+
+<!-- LEFT -->
 <div class="content container mt-3">
     <div class="row">
 
@@ -74,45 +73,60 @@
         </div>
 
 
+<!-- CENTER -->
 <div class="col-md-6 center-feed">
 
-    <div class="post">
-        <div class="profile">
-            <img src="https://img.freepik.com/premium-photo/accomplished-beautiful-indian-businesswoman_975188-40731.jpg">
-            <div>
-                <b>Priti</b><br>
-                <small>Intern</small>
-            </div>
-        </div>
+<!-- ✅ CREATE POST -->
+<div class="create-post">
+<input type="text" id="postInput" placeholder="Share company update..." class="form-control">
+<input type="text" id="mediaInput" placeholder="Image or YouTube URL" class="form-control mt-2">
+<p></p>
+<button onclick="addPost()">Post</button>
+</div>
 
-        <p>Excited to start my journey at CG Infinity 🚀</p>
-        <small>
-            <span class="material-icons" style="font-size:16px; vertical-align:middle;">thumb_up</span> 10 Likes |
-            <span class="material-icons" style="font-size:16px; vertical-align:middle;">chat_bubble</span> 2 Comments
-        </small>
-    </div>
+<div id="postContainer">
 
-    <div class="post">
-        <div class="profile">
-            <img src="https://img.freepik.com/premium-photo/accomplished-beautiful-indian-businesswoman_975188-40731.jpg">
-            <div>
-                <b>Preeti</b><br>
-                <small>Developer</small>
-            </div>
-        </div>
+<!-- SAMPLE POST -->
+<div class="post">
+<div class="profile">
+<img src="https://randomuser.me/api/portraits/men/45.jpg">
+<div><b>CG Admin</b><br><small>Update</small></div>
+</div>
 
-        <p>Working on new company portfolio design.</p>
-        <small>
-            <span class="material-icons" style="font-size:16px; vertical-align:middle;">thumb_up</span> 6 Likes |
-            <span class="material-icons" style="font-size:16px; vertical-align:middle;">chat_bubble</span> 1 Comment
-        </small>
-    </div>
+<p>New client project completed successfully!</p>
+
+<img src="https://images.pexels.com/photos/31284696/pexels-photo-31284696.jpeg?cs=srgb&dl=pexels-optical-chemist-340351297-31284696.jpg&fm=jpg" class="img-fluid">
+
+<small>
+<span onclick="like(this)" class="material-icons">thumb_up</span>
+<span class="like-count">10</span> Likes |
+<span class="material-icons">chat_bubble</span> 2 Comments
+</small>
+</div>
+
+<div class="post">
+<div class="profile">
+<img src="https://randomuser.me/api/portraits/men/45.jpg">
+<div><b>CG Admin</b><br><small>Update</small></div>
+</div>
+
+<p>New client project completed successfully!</p>
+
+<img src="https://images.pexels.com/photos/31284696/pexels-photo-31284696.jpeg?cs=srgb&dl=pexels-optical-chemist-340351297-31284696.jpg&fm=jpg" class="img-fluid">
+
+<small>
+<span onclick="like(this)" class="material-icons">thumb_up</span>
+<span class="like-count">10</span> Likes |
+<span class="material-icons">chat_bubble</span> 2 Comments
+</small>
+</div>
 
 </div>
 
+</div>
 
-
-        <div class="col-md-3 sidebar">
+<!-- RIGHT -->
+<div class="col-md-3 sidebar">
 
             <h5>Updates</h5>
 
@@ -147,12 +161,82 @@
 
 <!-- Footer -->
 <div class="footer">
-    CG Infinity © 2026
+CG Infinity © 2026
 </div>
 
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+// ✅ Like button
+function like(e) {
+    let count = e.nextElementSibling;
+    count.innerText = parseInt(count.innerText) + 1;
+}
+
+// ✅ Add post
+function addPost() {
+
+    let text = document.getElementById("postInput").value;
+    let media = document.getElementById("mediaInput").value;
+
+    if (text === "" && media === "") return;
+
+    let mediaHTML = "";
+
+    // Image
+    if (media.includes(".jpg") || media.includes(".png") || media.includes(".jpeg")) {
+        mediaHTML = `<img src="${media}" class="img-fluid mt-2">`;
+    } else if (media.includes("youtube.com") || media.includes("youtu.be")) {
+        let videoURL = media.replace("watch?v=", "embed/");
+        mediaHTML = `<iframe width="100%" height="250" src="${videoURL}" frameborder="0" allowfullscreen class="mt-2"></iframe>`;
+    }
+
+    let post = `
+    <div class="post">
+        <div class="profile">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg">
+            <div><b>You</b><br><small>Employee</small></div>
+        </div>
+
+        <p>${text}</p>
+
+        ${mediaHTML}
+
+        <small>
+            <span onclick="like(this)" class="material-icons">thumb_up</span>
+            <span class="like-count">0</span> Likes |
+            <span class="material-icons">chat_bubble</span> 0 Comments
+        </small>
+    </div>
+    `;
+
+    document.getElementById("postContainer").innerHTML =
+        post + document.getElementById("postContainer").innerHTML;
+
+    document.getElementById("postInput").value = "";
+    document.getElementById("mediaInput").value = "";
+}
+
+// ✅ Search posts
+function searchPosts() {
+    let input = document.getElementById("searchPost").value.toLowerCase();
+    let posts = document.getElementsByClassName("post");
+
+    for (let i = 0; i < posts.length; i++) {
+        let text = posts[i].innerText.toLowerCase();
+
+        if (text.includes(input)) {
+            posts[i].style.display = "block";
+        } else {
+            posts[i].style.display = "none";
+        }
+    }
+}
+
+</script>
 
 </body>
 </html>
